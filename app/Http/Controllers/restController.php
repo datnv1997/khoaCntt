@@ -16,7 +16,7 @@ class restController extends Controller
     {
         //
         $sinhVien = sinhVien::all();
-        return response()->json($sinhVien);
+        return response()->json($sinhVien, 200);
     }
 
     /**
