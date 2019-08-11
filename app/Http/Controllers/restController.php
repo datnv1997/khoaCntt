@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\sinhVien;
 use Illuminate\Http\Request;
 
 class restController extends Controller
@@ -11,9 +12,11 @@ class restController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $rq)
     {
         //
+        $sinhVien = sinhVien::all();
+        return response()->json($sinhVien);
     }
 
     /**

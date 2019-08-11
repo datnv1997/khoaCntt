@@ -16,6 +16,4 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/helloworld', function (Request $rq) {
-    return response()->json('hello', 200);
-});
+Route::resource('sinhvien', 'restController');
