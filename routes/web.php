@@ -11,6 +11,16 @@
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
+// Example Routes
+Route::view('/', 'op_auth_signin');
+// Route::view('/login', 'op_auth_signin');
+Route::match(['get', 'post'], '/dashboard', function () {
+    return view('dashboard');
 });
+Route::view('/examples/plugin-helper', 'examples.plugin_helper');
+Route::view('/examples/plugin-init', 'examples.plugin_init');
+Route::view('/examples/blank', 'examples.blank');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
