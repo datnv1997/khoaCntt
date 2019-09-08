@@ -134,7 +134,7 @@
                 <a class="font-w600 text-dual" href="/">
                     <i class="fa fa-circle-notch text-primary"></i>
                     <span class="smini-hide">
-                        <span class="font-w700 font-size-h5">ne</span> <span class="font-w400">4.2</span>
+                        <span class="font-w700 font-size-h5">Khoa CNTT</span> <span class="font-w400"></span>
                     </span>
                 </a>
                 <!-- END Logo -->
@@ -228,37 +228,54 @@
                     <li class="nav-main-item">
                         <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
                             <i class="nav-main-link-icon si si-cursor"></i>
-                            <span class="nav-main-link-name">Dashboard</span>
+                            <span class="nav-main-link-name">Trang chủ</span>
                         </a>
                     </li>
-                    <li class="nav-main-heading">Various</li>
+                    <li class="nav-main-heading">Danh mục</li>
                     <li class="nav-main-item{{ request()->is('examples/*') ? ' open' : '' }}">
                         <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
                             aria-expanded="true" href="#">
                             <i class="nav-main-link-icon si si-bulb"></i>
-                            <span class="nav-main-link-name">Examples</span>
+                            <span class="nav-main-link-name">Phân loại bài viết</span>
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('examples/plugin-helper') ? ' active' : '' }}"
-                                    href="/examples/plugin-helper">
-                                    <span class="nav-main-link-name">Plugin with JS Helper</span>
+                                    href="/forms_editors">
+                                    <span class="nav-main-link-name">Tạo bài viết</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('examples/plugin-init') ? ' active' : '' }}"
                                     href="/examples/plugin-init">
-                                    <span class="nav-main-link-name">Plugin with JS Init</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link{{ request()->is('examples/blank') ? ' active' : '' }}"
-                                    href="/examples/blank">
-                                    <span class="nav-main-link-name">Blank</span>
+                                    <span class="nav-main-link-name">Xem bài viết</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
+                    <li class="nav-main-item{{ request()->is('examples/*') ? ' open' : '' }}">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
+                            aria-expanded="true" href="#">
+                            <i class="nav-main-link-icon si si-bulb"></i>
+                            <span class="nav-main-link-name">Giáo viên</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link{{ request()->is('examples/plugin-helper') ? ' active' : '' }}"
+                                    href="{{ route('login') }}">
+                                    <span class="nav-main-link-name">Tạo bài viết</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link{{ request()->is('examples/plugin-init') ? ' active' : '' }}"
+                                    href="/examples/plugin-init">
+                                    <span class="nav-main-link-name">Xem bài viết</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="nav-main-heading">More</li>
                     <li class="nav-main-item open">
                         <a class="nav-main-link" href="/">
@@ -519,11 +536,17 @@
         </header>
         <!-- END Header -->
 
+
+
+
         <!-- Main Container -->
         <main id="main-container">
             @yield('content')
         </main>
         <!-- END Main Container -->
+
+
+
 
 
 
