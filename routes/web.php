@@ -12,7 +12,7 @@
  */
 
 // Example Routes
-Route::view('/', 'op_auth_signin');
+Route::view('/', 'op_auth_signin')->middleware('auth');
 // Route::view('/login', 'op_auth_signin');
 Route::match(['get', 'post'], '/dashboard', function () {
     return view('dashboard');
@@ -25,4 +25,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::view('/forms_editors', 'forms_editors');
-
+Route::view('/danh-sach-giao-vien', 'danhSachGiaovien');
+Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');
