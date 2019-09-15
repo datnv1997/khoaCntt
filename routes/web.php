@@ -27,3 +27,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::view('/tao-bai-viet', 'taoBaiViet');
 Route::view('/danh-sach-giao-vien', 'danhSachGiaovien');
 Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');
+
+
+
+
+//   API
+
+// Giáo viên
+Route::get('api/list-giao-vien', 'GiaoVienController@listGiaoVien');
+Route::get('api/list-giao-vien/{id}', 'GiaoVienController@showGiaoVien');
+
+//lop học phần
+Route::get('api/list-lop-hoc-phan', 'LopHocPhanController@listLopHocPhan');
