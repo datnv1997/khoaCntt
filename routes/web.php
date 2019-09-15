@@ -24,6 +24,6 @@ Route::match(['get', 'post'], '/dashboard', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::view('/forms_editors', 'forms_editors');
+Route::view('/tao-bai-viet', 'taoBaiViet');
 Route::view('/danh-sach-giao-vien', 'danhSachGiaovien');
 Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');

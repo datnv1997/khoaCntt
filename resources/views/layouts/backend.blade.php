@@ -241,7 +241,7 @@
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('examples/plugin-helper') ? ' active' : '' }}"
-                                    href="/forms_editors">
+                                    href="/tao-bai-viet">
                                     <span class="nav-main-link-name">Tạo bài viết</span>
                                 </a>
                             </li>
