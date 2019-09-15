@@ -36,3 +36,6 @@ Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');
 // Giáo viên
 Route::get('api/list-giao-vien', 'GiaoVienController@listGiaoVien');
 Route::get('api/list-giao-vien/{id}', 'GiaoVienController@showGiaoVien');
+
+//lop học phần
+Route::get('api/list-lop-hoc-phan', 'LopHocPhanController@listLopHocPhan');
