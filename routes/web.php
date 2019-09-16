@@ -33,9 +33,16 @@ Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');
 
 //   API
 
-// Giáo viên
 Route::get('api/list-giao-vien', 'GiaoVienController@listGiaoVien');
 Route::get('api/list-giao-vien/{id}', 'GiaoVienController@showGiaoVien');
-
-//lop học phần
 Route::get('api/list-lop-hoc-phan', 'LopHocPhanController@listLopHocPhan');
+Route::get('api/list-bai-giang', 'BaiGiangController@listBaiGiang');
+Route::get('api/list-bo-mon', 'BoMonController@listBoMon');
+Route::get('api/list-chi-tiet-bai-viet', 'ChiTetBaiVietController@listChiTietBaiViet');
+Route::get('api/list-cong-trinh-cong-bo', 'CongTrinhCongBoController@listCongTrinhCongBo');
+Route::get('api/list-danh-sach-bai-viet', 'DanhSachBaiVietController@listDanhSachBaiViet');
+Route::get('api/list-danh-sach-diem-danh', 'DanhSachDiemDanhController@listDanhSachDiemDanh');
+Route::get('api/list-de-tai-du-an', 'DeTaiDuAnController@listDeTaiDuAn');
+Route::get('api/list-lop-mon-hoc', 'MonHocController@listMonHoc');
+
+
