@@ -23,18 +23,33 @@
     <form action="be_forms_elements.html" method="POST" enctype="multipart/form-data" onsubmit="return false;">
         <div class="row push">
 
-            <div class="col-lg-12 col-xl-5 col-md-12 col-12">
+            <div class="col-lg-4 col-xl-7 col-md-4 col-12">
 
                 <div class="form-group">
-                    <label for="example-email-input">Tên phân loại</label>
+                    <label for="example-email-input">Tên bài viết</label>
                     <input type="email" class="form-control" id="example-email-input" name="example-email-input">
                 </div>
 
+
+            </div>
+            <div class="col-lg-8 col-xl-5 col-md-7 col-12">
                 <div class="form-group">
-                    <label for="example-textarea-input">Mô tả phân loại</label>
-                    <textarea class="form-control" id="example-textarea-input" name="example-textarea-input" rows="4"
-                        placeholder="Textarea content.."></textarea>
+                    <label for="example-select">Phân loại</label>
+                    <select class="form-control" id="example-select" name="example-select">
+                        <option value="0">Please select</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                        <option value="4">Option #4</option>
+                        <option value="5">Option #5</option>
+                        <option value="6">Option #6</option>
+                        <option value="7">Option #7</option>
+                        <option value="8">Option #8</option>
+                        <option value="9">Option #9</option>
+                        <option value="10">Option #10</option>
+                    </select>
                 </div>
+
             </div>
         </div>
 

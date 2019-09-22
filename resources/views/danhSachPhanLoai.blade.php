@@ -9,7 +9,6 @@
             <tr>
                 <th>id</th>
                 <th style="width: 30%;">Tiêu đề</th>
-                <th style="width: 30%;">Mô tả ngắn</th>
                 <th style="width: 30%;">Phân loại</th>
                 <th style="width: 30%;">Ngày tạo</th>
                 <th class="text-center" style="width: 100px;">Actions</th>
@@ -21,7 +20,6 @@
 
                 <td class="font-size-sm">1</td>
                 <td class="font-size-sm">Thế giới thay đổi</td>
-                <td class="font-size-sm">Sub-Description</td>
                 <td class="font-size-sm">Blog</td>
                 <td class="font-size-sm">20/08/2019</td>
 

@@ -24,12 +24,17 @@ Route::match(['get', 'post'], '/dashboard', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::view('/tao-bai-viet', 'taoBaiViet');
-Route::view('/danh-sach-giao-vien', 'danhSachGiaovien');
+//phanloai
+
+Route::post('/createPhanLoai', 'PhanLoaiBaiViet@create');
+Route::view('/tao-phan-loai-bai-viet', 'taoPhanLoai');
+Route::view('/danh-sach-phan-loai', 'danhSachPhanLoai');
+// bai-viet
+Route::view('/tao-bai-viet', 'baiViet');
 Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');
 
-
-
+//giao vien
+Route::view('/danh-sach-giao-vien', 'danhSachGiaovien');
 
 //   API
 
@@ -44,5 +49,3 @@ Route::get('api/list-danh-sach-bai-viet', 'DanhSachBaiVietController@listDanhSac
 Route::get('api/list-danh-sach-diem-danh', 'DanhSachDiemDanhController@listDanhSachDiemDanh');
 Route::get('api/list-de-tai-du-an', 'DeTaiDuAnController@listDeTaiDuAn');
 Route::get('api/list-lop-mon-hoc', 'MonHocController@listMonHoc');
-
-
