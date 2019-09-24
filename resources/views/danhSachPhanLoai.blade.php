@@ -7,34 +7,36 @@
     <table class="table table-bordered table-striped table-vcenter">
         <thead>
             <tr>
-                <th>id</th>
+
+                <th style="width: 30%;">Id</th>
+
                 <th style="width: 30%;">Tiêu đề</th>
-                <th style="width: 30%;">Phân loại</th>
+                <th style="width: 30%;">Mô tả</th>
                 <th style="width: 30%;">Ngày tạo</th>
                 <th class="text-center" style="width: 100px;">Actions</th>
             </tr>
         </thead>
         <tbody>
+            @foreach($data as $data)
             <tr>
-
-
-                <td class="font-size-sm">1</td>
-                <td class="font-size-sm">Thế giới thay đổi</td>
-                <td class="font-size-sm">Blog</td>
-                <td class="font-size-sm">20/08/2019</td>
+                <td class="font-size-sm">{{$data->id}}</td>
+                <td class="font-size-sm">{{$data->name}}</td>
+                <td class="font-size-sm">{{$data->description}}</td>
+                <td class="font-size-sm">{{$data->createdDate}}</td>
 
                 <td class="text-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit">
+                        <a href="{{ url('/edit-phan-loai/id='.$data->id) }}" class="btn btn-sm btn-primary"
+                            data-toggle="tooltip" title="Edit">
                             <i class="fa fa-fw fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Delete">
+                        </a>
+                        <a href="{{ url('') }}" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Delete">
                             <i class="fa fa-fw fa-times"></i>
-                        </button>
+                        </a>
                     </div>
                 </td>
             </tr>
-
+            @endforeach
 
 
         </tbody>

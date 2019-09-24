@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\PhanLoaiBaiViet as pl;
+use Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PhanLoaiBaiViet extends Controller
 {
@@ -13,7 +16,10 @@ class PhanLoaiBaiViet extends Controller
      */
     public function index()
     {
-        //
+        $pl = new pl();
+        $data = $pl->all();
+        // echo $data;
+        return view("danhSachPhanLoai")->with('data', $data);
     }
 
     /**
@@ -21,10 +27,20 @@ class PhanLoaiBaiViet extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
-        echo "hello";
+        $pl = new pl();
+        $uuid = Str::uuid()->toString();
+        $name = $request->input("name-input");
+        $description = $request->input("description-input");
+
+        $mytime = Carbon::now();
+        $pl->id = $uuid;
+        $pl->name = $name;
+        $pl->description = $description;
+        $pl->createdDate = $mytime;
+        $pl->save();
+        return view('danhSachPhanLoai');
     }
 
     /**
@@ -57,7 +73,9 @@ class PhanLoaiBaiViet extends Controller
      */
     public function edit($id)
     {
-        //
+        $pl = new pl();
+        $data = $pl->find($id);
+        return view("editPhanLoai")->with('data', $data);
     }
 
     /**
@@ -70,6 +88,14 @@ class PhanLoaiBaiViet extends Controller
     public function update(Request $request, $id)
     {
         //
+        $name = $request->input("name-input");
+        $description = $request->input("description-input");
+        $pl = new pl();
+        $pl = pl::find($id);
+        $pl->name = $name;
+        $pl->description = $description;
+        $pl->save();
+        // return redirect()->route('danh-sach-phan-loai');
     }
 
     /**

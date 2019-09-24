@@ -18,6 +18,7 @@ class PhanLoaiBaiViet extends Model
      *
      * @var string
      */
+    public $timestamps = false;
     protected $table = 'phan-loai-bai-viet';
 
     /**
@@ -37,7 +38,7 @@ class PhanLoaiBaiViet extends Model
     /**
      * @var array
      */
-    protected $fillable = ['ten-phan-loai', 'ngay-tao'];
+    protected $fillable = ['name', 'description', 'createdDate'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -54,4 +55,5 @@ class PhanLoaiBaiViet extends Model
     {
         return $this->hasMany('App\DanhSachBaiViet', 'id-phan-loai');
     }
+
 }

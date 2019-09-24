@@ -22,13 +22,14 @@ Route::match(['get', 'post'], '/dashboard', function () {
 // Route::view('/examples/blank', 'examples.blank');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 //phanloai
-
 Route::post('/createPhanLoai', 'PhanLoaiBaiViet@create');
+Route::get('/danh-sach-phan-loai', 'PhanLoaiBaiViet@index');
+Route::get('/edit-phan-loai/id={id}', 'PhanLoaiBaiViet@edit');
+Route::get('/update/id={id}', 'PhanLoaiBaiViet@update');
 Route::view('/tao-phan-loai-bai-viet', 'taoPhanLoai');
-Route::view('/danh-sach-phan-loai', 'danhSachPhanLoai');
+
 // bai-viet
 Route::view('/tao-bai-viet', 'baiViet');
 Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');

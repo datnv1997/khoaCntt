@@ -8,7 +8,7 @@
     <div class="content content-full">
         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
             <h1 class="flex-sm-fill h3 my-2">
-                Tạo bài viết
+                Sửa bài viết
             </h1>
 
         </div>
@@ -18,9 +18,7 @@
 
 <!-- Page Content -->
 <div class="content">
-
-
-    <form action=" {{url('/createPhanLoai')}}" method="Post">
+    <form action=" {{url('/update/id='.$data->id)}}" method="get">
         {{ csrf_field()}}
         <div class="row push">
 
@@ -28,19 +26,20 @@
 
                 <div class="form-group">
                     <label for="example-name-input">Tên phân loại</label>
-                    <input type="text" class="form-control" id="example-name-input" name="name-input">
+                    <input type="text" class="form-control" id="example-name-input" name="name-input"
+                        value={{$data->name}} autofocus>
                 </div>
 
                 <div class="form-group">
                     <label for="example-textarea-input">Mô tả phân loại</label>
                     <textarea class="form-control" id="example-textarea-input" name="description-input" rows="4"
-                        placeholder="Textarea content.."></textarea>
+                        placeholder={{$data->description}}></textarea>
                 </div>
             </div>
         </div>
 
         <div class="mb-3">
-            <button class="btn btn-info" type="submit">Tạo</button>
+            <button class="btn btn-info" type="submit">Sửa</button>
         </div>
 
     </form>
