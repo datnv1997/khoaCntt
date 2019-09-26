@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\GiaoVien;
+use App\GiaoVien as gv;
+use App\BoMon as bm;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -25,6 +26,39 @@ class GiaoVienController extends Controller
             "code"=>'404',
             "message"=>"data is null"
         ],400);
+    }
+
+
+    public function index()
+    {
+        $gv = new gv();
+        $data = $gv->all();
+        return view('danhSachGiaoVien')->with('data', $data);
+    }
+
+    public function test ()
+    {
+        $bomon = new bm();
+        $data = $bm->all();
+        echo $data;
+        //return view('taoGiaoVien')->with('data', $data);
+    }
+
+
+    public function create(Request $request)
+    {
+        $gv = new gv();
+        $uuid = Str::uuid()->toString();
+        $name = $request->input("name-input");
+        $email = $request->input("email-input");
+        $bomon = $request->input("bomon-input");
+
+        $gv->id = $uuid;
+        $gv->name = $name;
+        $pl->description = $description;
+        $pl->createdDate = $mytime;
+        $pl->save();
+        return redirect('/danh-sach-giao-vien');
     }
 
     public function update(Request $request, $id){

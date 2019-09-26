@@ -8,7 +8,8 @@
         <thead>
             <tr>
 
-                <th>Họ và tên</th>
+                <th style="width: 30%;">Id</th>
+                <th style="width: 30%;">Tên giáo viên</th>
                 <th style="width: 30%;">Email</th>
                 <th style="width: 30%;">Bộ môn</th>
                 <th style="width: 30%;">Cấp bậc</th>
@@ -17,27 +18,28 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($data as $data)
             <tr>
-                <td class="font-w600 font-size-sm">
-                    <a href="be_pages_generic_profile.html">Laura Carr</a>
-                </td>
-                <td class="font-size-sm">client1<em class="text-muted">@example.com</em></td>
-                <td class="font-size-sm">Khoa học máy tính</td>
-                <td class="font-size-sm">Trưởng bộ môn</td>
-                <td class="font-size-sm">20/08/1997</td>
+                <td class="font-size-sm">{{$data->id}}</td>
+                <td class="font-size-sm">{{$data->name}}</td>
+                <td class="font-size-sm">{{$data->email}}</td>
+                <td class="font-size-sm">{{$data->boMon}}</td>
+                <td class="font-size-sm">{{$data->capBac}}</td>
+                <td class="font-size-sm">{{$data->birthDay}}</td>
 
                 <td class="text-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit">
+                        <a href="{{ url('/edit-phan-loai/id='.$data->id) }}" class="btn btn-sm btn-primary"
+                            data-toggle="tooltip" title="Edit">
                             <i class="fa fa-fw fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Delete">
+                        </a>
+                        <a href="{{ url('') }}" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Delete">
                             <i class="fa fa-fw fa-times"></i>
-                        </button>
+                        </a>
                     </div>
                 </td>
             </tr>
-
+            @endforeach
 
 
         </tbody>

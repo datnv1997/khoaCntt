@@ -284,14 +284,14 @@
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('examples/plugin-helper') ? ' active' : '' }}"
-                                    href="{{ route('login') }}">
-                                    <span class="nav-main-link-name">Tạo bài viết</span>
+                                    href="/tao-giao-vien">
+                                    <span class="nav-main-link-name">Tạo Giáo viên</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('examples/plugin-init') ? ' active' : '' }}"
                                     href="/danh-sach-giao-vien">
-                                    <span class="nav-main-link-name">Xem bài viết</span>
+                                    <span class="nav-main-link-name">Danh sách giáo viên</span>
                                 </a>
                             </li>
                         </ul>
@@ -328,6 +328,28 @@
                                 <a class="nav-main-link{{ request()->is('examples/plugin-helper') ? ' active' : '' }}"
                                     href="{{ route('login') }}">
                                     <span class="nav-main-link-name">Lớp học phần</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-main-item{{ request()->is('examples/*') ? ' open' : '' }}">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
+                            aria-expanded="true" href="#">
+                            <i class="nav-main-link-icon si si-bulb"></i>
+                            <span class="nav-main-link-name">Sinh viên</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link{{ request()->is('examples/plugin-helper') ? ' active' : '' }}"
+                                    href="/tao-sinh-vien">
+                                    <span class="nav-main-link-name">Tạo sinh viên</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link{{ request()->is('examples/plugin-init') ? ' active' : '' }}"
+                                    href="/danh-sach-sinh-vien">
+                                    <span class="nav-main-link-name">Danh sách sinh viên</span>
                                 </a>
                             </li>
                         </ul>

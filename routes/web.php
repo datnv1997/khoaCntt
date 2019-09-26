@@ -42,10 +42,13 @@ Route::view('/tao-bai-viet', 'baiViet');
 Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');
 
 //giao vien
-Route::view('/danh-sach-giao-vien', 'danhSachGiaovien');
+//Route::view('/tao-giao-vien', 'taoGiaoVien');
+Route::view('/tao-giao-vien', 'GiaoVienController@test');
+Route::get('/danh-sach-giao-vien', 'GiaoVienController@index');
+Route::get('/danh-sach-giao-vien', 'GiaoVienController@index');
+Route::get('/edit-giao-vien/id={id}', 'GiaoVienController@edit');
 
 //   API
-
 Route::get('api/list-giao-vien', 'GiaoVienController@listGiaoVien');
 Route::get('api/list-giao-vien/{id}', 'GiaoVienController@showGiaoVien');
 Route::get('api/list-lop-hoc-phan', 'LopHocPhanController@listLopHocPhan');

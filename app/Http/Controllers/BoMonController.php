@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\BoMon;
+use App\BoMon as bm;
 
 class BoMonController extends Controller
 {
@@ -24,4 +24,11 @@ class BoMonController extends Controller
             "message" => "data is null",
         ], 400);
     }
+
+    public function index()
+    {
+        $bm = new bm();
+        $data = $bm->all();
+    }
+
 }
