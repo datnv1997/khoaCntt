@@ -40,7 +40,7 @@ class PhanLoaiBaiViet extends Controller
         $pl->description = $description;
         $pl->createdDate = $mytime;
         $pl->save();
-        return view('danhSachPhanLoai');
+        return redirect('/danh-sach-phan-loai');
     }
 
     /**
@@ -75,7 +75,7 @@ class PhanLoaiBaiViet extends Controller
     {
         $pl = new pl();
         $data = $pl->find($id);
-        return view("editPhanLoai")->with('data', $data);
+        return redirect('/danh-sach-phan-loai');
     }
 
     /**
@@ -95,7 +95,7 @@ class PhanLoaiBaiViet extends Controller
         $pl->name = $name;
         $pl->description = $description;
         $pl->save();
-        // return redirect()->route('danh-sach-phan-loai');
+        return redirect('/danh-sach-phan-loai');
     }
 
     /**

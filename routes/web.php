@@ -30,6 +30,13 @@ Route::get('/edit-phan-loai/id={id}', 'PhanLoaiBaiViet@edit');
 Route::get('/update/id={id}', 'PhanLoaiBaiViet@update');
 Route::view('/tao-phan-loai-bai-viet', 'taoPhanLoai');
 
+//hocphan
+Route::post('/createHocPhan', 'LopHocPhanController@create');
+// Route::get('/danh-sach-phan-loai', 'PhanLoaiBaiViet@index');
+// Route::get('/edit-phan-loai/id={id}', 'PhanLoaiBaiViet@edit');
+// Route::get('/update/id={id}', 'PhanLoaiBaiViet@update');
+Route::get('/tao-lop-hoc-phan', 'LopHocPhanController@test');
+
 // bai-viet
 Route::view('/tao-bai-viet', 'baiViet');
 Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');

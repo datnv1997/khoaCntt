@@ -34,7 +34,7 @@ class DanhSachDiemDanh extends Model
      */
     public function giaoVien()
     {
-        return $this->belongsTo('App\GiaoVien', 'ma-gv', 'mgv');
+        return $this->belongsTo('App\GiaoVien', 'ma-gv', 'mgv')->onDelete('cascade');
     }
 
     /**
@@ -42,6 +42,6 @@ class DanhSachDiemDanh extends Model
      */
     public function sinhVien()
     {
-        return $this->belongsTo('App\SinhVien', 'msv', 'msv');
+        return $this->belongsTo('App\SinhVien', 'msv', 'msv')->onDelete('cascade');
     }
 }
