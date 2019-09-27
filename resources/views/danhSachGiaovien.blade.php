@@ -20,7 +20,7 @@
         <tbody>
             @foreach($data as $data)
             <tr>
-                <td class="font-size-sm">{{$data->id}}</td>
+                <td class="font-size-sm">{{$data->mgv}}</td>
                 <td class="font-size-sm">{{$data->name}}</td>
                 <td class="font-size-sm">{{$data->email}}</td>
                 <td class="font-size-sm">{{$data->boMon}}</td>
