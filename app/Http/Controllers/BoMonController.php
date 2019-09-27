@@ -9,7 +9,8 @@ class BoMonController extends Controller
     //
     public function listBoMon()
     {
-        $bo_mon = BoMon::all();
+        $bm = new bm();
+        $bo_mon = $bm->all();
 
         if (count($bo_mon) > 0) {
             return response()->json([

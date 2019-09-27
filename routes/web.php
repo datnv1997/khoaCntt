@@ -42,21 +42,8 @@ Route::view('/tao-bai-viet', 'baiViet');
 Route::view('/danh-sach-bai-viet', 'danhSachBaiViet');
 
 //giao vien
-//Route::view('/tao-giao-vien', 'taoGiaoVien');
-Route::view('/tao-giao-vien', 'GiaoVienController@test');
+Route::post('/createGiaoVien', 'GiaoVienController@create');
+Route::get('/tao-giao-vien', 'GiaoVienController@test');
 Route::get('/danh-sach-giao-vien', 'GiaoVienController@index');
 Route::get('/danh-sach-giao-vien', 'GiaoVienController@index');
 Route::get('/edit-giao-vien/id={id}', 'GiaoVienController@edit');
-
-//   API
-Route::get('api/list-giao-vien', 'GiaoVienController@listGiaoVien');
-Route::get('api/list-giao-vien/{id}', 'GiaoVienController@showGiaoVien');
-Route::get('api/list-lop-hoc-phan', 'LopHocPhanController@listLopHocPhan');
-Route::get('api/list-bai-giang', 'BaiGiangController@listBaiGiang');
-Route::get('api/list-bo-mon', 'BoMonController@listBoMon');
-Route::get('api/list-chi-tiet-bai-viet', 'ChiTetBaiVietController@listChiTietBaiViet');
-Route::get('api/list-cong-trinh-cong-bo', 'CongTrinhCongBoController@listCongTrinhCongBo');
-Route::get('api/list-danh-sach-bai-viet', 'DanhSachBaiVietController@listDanhSachBaiViet');
-Route::get('api/list-danh-sach-diem-danh', 'DanhSachDiemDanhController@listDanhSachDiemDanh');
-Route::get('api/list-de-tai-du-an', 'DeTaiDuAnController@listDeTaiDuAn');
-Route::get('api/list-lop-mon-hoc', 'MonHocController@listMonHoc');

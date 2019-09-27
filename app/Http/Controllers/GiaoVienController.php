@@ -7,12 +7,14 @@ use App\BoMon as bm;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 
 class GiaoVienController extends Controller
 {
     // lấy danh sách tất cả giáo viên
     public function listGiaoVien() {
-        $giaovien = GiaoVien::all();
+        $gv = new gv();
+        $giaovien =  $gv->all();
 
         if ( count($giaovien) > 0){
             return response()->json([
@@ -39,9 +41,8 @@ class GiaoVienController extends Controller
     public function test ()
     {
         $bomon = new bm();
-        $data = $bm->all();
-        echo $data;
-        //return view('taoGiaoVien')->with('data', $data);
+        $data = $bomon->all();
+        return view('taoGiaoVien')->with('data', $data);
     }
 
 
@@ -51,13 +52,16 @@ class GiaoVienController extends Controller
         $uuid = Str::uuid()->toString();
         $name = $request->input("name-input");
         $email = $request->input("email-input");
-        $bomon = $request->input("bomon-input");
+        $bomon = $request->get("bomon-select");
+        $capbac = $request->get("capbac-select");
 
-        $gv->id = $uuid;
+        $gv->mgv = $uuid;
         $gv->name = $name;
-        $pl->description = $description;
-        $pl->createdDate = $mytime;
-        $pl->save();
+        $gv->email = $email;
+        $gv->boMon = $bomon;
+        $gv->capBac = $capbac;
+       // $gv->birthDay = 12-11-1990;
+        $gv->save();
         return redirect('/danh-sach-giao-vien');
     }
 

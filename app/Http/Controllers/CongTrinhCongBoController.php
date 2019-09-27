@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\CongTrinhCongBo;
+use App\CongTrinhCongBo as ctcb;
 
 use Illuminate\Http\Request;
 
 class CongTrinhCongBoController extends Controller
 {
-    //
+
     public function listCongTrinhCongBo() {
-        $cong_trinh_cong_bo = CongTrinhCongBo::all();
+        $ctcb = new ctcb();
+        $cong_trinh_cong_bo = $ctcb->all();
 
         if ( count($cong_trinh_cong_bo) > 0){
             return response()->json([

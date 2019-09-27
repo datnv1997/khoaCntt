@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\DeTaiDuAn;
+use App\DeTaiDuAn as dtda;
 
 use Illuminate\Http\Request;
 
@@ -10,7 +10,8 @@ class DeTaiDuAnController extends Controller
 {
     //
     public function listDeTaiDuAn() {
-        $de_tai_du_an= DeTaiDuAn::all();
+        $dtda = new dtda();
+        $de_tai_du_an= $dtda->all();
 
         if ( count($de_tai_du_an) > 0){
             return response()->json([

@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\DanhSachBaiViet;
+use App\DanhSachBaiViet as dsbv;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class DanhSachBaiVietController extends Controller
 {
     //
+
     public function listDanhSachBaiViet() {
-        $danh_sach_bai_viet = DanhSachBaiViet::all();
+        $dsbv = new dsbv();
+        $danh_sach_bai_viet = $dsbv->all();
 
         if ( count($danh_sach_bai_viet) > 0){
             return response()->json([

@@ -39,24 +39,24 @@
                 <div class="form-group">
                     <label>Bộ môn</label>
                     <select class="form-control" id="example-select" name="bomon-select">
-                        <option value="0">Bộ môn 1</option>
-                        <option value="1">Bộ môn 2</option>
-                        <option value="2">Bộ môn 3</option>
+                        @foreach($data as $data)
+                            <option value="{{$data->mbm}}">{{$data->name}}</option>
+                        @endforeach
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Cấp bậc</label>
                     <select class="form-control" id="example-select" name="capbac-select">
-                        <option value="0">Giáo viên</option>
-                        <option value="1">Trưởng khoa</option>
-                        <option value="2">Phó khoa</option>
+                        <option value="Giáo viên">Giáo viên</option>
+                        <option value="Trưởng khoa">Trưởng khoa</option>
+                        <option value="Phó khoa">Phó khoa</option>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <input type="text" class="js-datepicker form-control" id="example-datepicker1" name="example-datepicker1" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
-                </div>
+                </div> -->
 
             </div>
         </div>

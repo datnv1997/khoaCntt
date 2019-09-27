@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\ChiTietBaiViet;
+use App\ChiTietBaiViet as ctbv;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ChiTietBaiVietController extends Controller
 {
     //
     public function listChiTietBaiViet() {
-        $chi_tiet_bai_viet = ChiTietBaiViet::all();
+        $ctbv = new ctbv();
+        $chi_tiet_bai_viet = $ctbv->all();
 
         if ( count($chi_tiet_bai_viet) > 0){
             return response()->json([

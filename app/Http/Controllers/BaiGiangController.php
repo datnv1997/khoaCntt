@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\BaiGiang;
+use App\BaiGiang as bg;
 
 class BaiGiangController extends Controller
 {
     //
     public function listBaiGiang()
     {
-        $bai_giang = BaiGiang::all();
+        $bg = new bg();
+        $bai_giang = $bg->all();
 
         if (count($bai_giang) > 0) {
             return response()->json([

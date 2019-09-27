@@ -10,7 +10,8 @@ class DanhSachDiemDanhController extends Controller
     //
     public function listDanhSachDiemDanh()
     {
-        $danh_sach_diem_danh = DanhSachDiemDanh::all();
+        $dsdd = new Model();
+        $danh_sach_diem_danh = $dsdd->all();
 
         if (count($danh_sach_diem_danh) > 0) {
             return response()->json([
